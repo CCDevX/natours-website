@@ -36,6 +36,15 @@
     }
   }
 
+  &--green{
+    background: $color-primary;
+    color:$color-white;
+
+    &::after{
+      background:$color-primary;
+    }
+  }
+
   &::after{
     content: "";
     display: inline-block;
@@ -56,5 +65,29 @@
       pendant le délai de 0.75s. Sans ça, le bouton serait visible
       puis disparaîtrait brusquement avant de s'animer */
     animation-fill-mode: backwards;
+  }
+}
+
+.btn-text{
+  &:link, &:visited{
+    font-size: $default-font-size;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: .1rem solid $color-primary;
+    padding: .3rem .7rem;
+    transition: all .2s;
+  }
+
+  &:hover{
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black,.15);
+    transform: translateY(-0.2rem);
+  }
+
+  &:active{
+    box-shadow: 0 .5rem 1rem rgba($color-black,.15);
+    transform: translateY(0);
   }
 }
